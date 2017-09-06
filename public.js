@@ -17,12 +17,18 @@ function findGetParameter(parameterName) {
 
 
 $(function () {
-    var c = findGetParameter('third');
-    var b = findGetParameter('second');
+    var th = findGetParameter('third');
+    var sec = findGetParameter('second');
+    if(sec) {
+        if (th) {
+            $("html,body").animate({scrollTop: $('#content>div').eq(sec).find('span').eq(th).offset().top}, 400);
+        } else {
+            $("html,body").animate({scrollTop: $('#content>div').eq(sec).offset().top}, 400);
+        }
+    }else{
+        $("html,body").animate({scrollTop: $('#content>div:first-child').offset().top}, 500);
+    }
 
-    $("html,body").animate({scrollTop: $('#section_1').offset().top}, 400);
-
-    // $("html,body").animate({scrollTop: section.offset().top}, 500);
 
     var content = $('#content');
     var items = $('#content>div');
