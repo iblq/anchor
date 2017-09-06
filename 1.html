@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="dist/bootstrap.min.css">
+    <link rel="stylesheet" href="public.css">
+    <script src="dist/jquery.min.js"></script>
+    <script src="dist/bootstrap.min.js"></script>
+    <script src="dist/jquery.waterfall.min.js"></script>
+    <script src="public.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="htmleaf-container">
+    <div class="htmleaf-content bgcolor-3">
+        <div id="div1">
+            <div class="box">
+                <a href="1-1.html?second=1">
+                    <img src="image/page_1/test.jpg" alt="">
+                    <p>区划人口</p>
+                </a>
+            </div>
+            <div class="box">
+                <a href="1-1.html?second=2"><img src="image/page_1/test.jpg" alt=""></a>
+            </div>
+            <div class="box">
+                <a href="1-1.html?second=3"><img src="image/page_1/test.jpg" alt=""></a>
+            </div>
+            <div class="box">
+                <a href="1-1.html?second=4"><img src="image/page_1/test.jpg" alt=""></a>
+            </div>
+            <div class="box">
+                <a href="1-1.html?second=5"><img src="image/page_1/test.jpg" alt=""></a>
+            </div>
+            <div class="box">
+                <a href="1-1.html?second=6"><img src="image/page_1/test.jpg" alt=""></a>
+            </div>
+            <div class="box">
+                <a href="1-1.html?second=7"><img src="image/page_1/test.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#div1").waterfall({
+        itemClass: ".box",
+        minColCount: 2,
+        spacingWidth: 20,
+        spacingHeight: 20,
+        itemAlign: "center",
+        resizeable: true,
+        isFadeIn: true
+    });
+</script>
+</body>
+</html>
