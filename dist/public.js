@@ -19,6 +19,8 @@ function findGetParameter(parameterName) {
 $(function () {
     var th = findGetParameter('third');
     var sec = findGetParameter('second');
+    th=th?th-1:null;
+    sec=sec?sec-1:0;
     if (sec) {
         if (th) {
             $("html,body").animate({scrollTop: $('#content>div').eq(sec).find('span').eq(th).offset().top}, 400);
@@ -68,7 +70,6 @@ $(function () {
                             $("#left-nav>a").eq(i).addClass('active');
                             $('.abox').hide();
 
-
                             $("#left-nav>span a").removeClass("secActive");
                             $("#left-nav>a").eq(i).next().show().find('a').eq(j).addClass("secActive");
                         }
@@ -104,19 +105,15 @@ $(function () {
 
     $('.first').click(function (e) {
         var index = $(this).data('index');
-        var node = $(this).next()[0].nodeName;
-        if(node !== "A"){
-        }
-        $("html,body").animate({scrollTop: $('.title').eq(index).offset().top}, 400, function () {
-            setTimeout($("#left-nav>span>a").removeClass("active"), 100)
-        });
 
-        $(this).next().show();
+        $("html,body").animate({scrollTop: $('.title').eq(index).offset().top}, 400, function () {
+            setTimeout($("#left-nav>span>a").removeClass("secActive"), 100)
+        });
+        // $(this).next().show();
     });
 
     $('.second').click(function (e) {
         var f = $(this).parent().prev().data('index');
-        console.log(f)
 
         var section = $('#content>div').eq(f);
         var s = section.find('span');
