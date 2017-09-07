@@ -36,7 +36,7 @@ $(function () {
     var items = $('#content>div');
 
     for (var i = 0; i < items.length; i++) {
-        var title = items.eq(i).children('div')[0].innerHTML;
+        var title = items.eq(i).children('.title')[0].innerText;
         var first = $("<a></a>", {
             "class": "list-group-item list-group-item-info first",
             "data-index": i,
@@ -44,14 +44,14 @@ $(function () {
         }).text(title);
         $('#left-nav').append(first);
         if (items.eq(i).find('span').length > 0) {
-            var p = items.eq(i).find('p');
+            var p = items.eq(i).children('p');
             var span = $("<span></span>", {
                 "class": "abox",
                 "style": "display: none",
                 "data-index": i
             });
             for (var j = 0; j < p.length; j++) {
-                var secTitle = p.eq(j).children('span')[0].innerHTML;
+                var secTitle = p.eq(j).children('span')[0].innerText;
 
                 var a = $("<a></a>", {
                     "class": "list-group-item second",
